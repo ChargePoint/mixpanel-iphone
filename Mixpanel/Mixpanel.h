@@ -27,14 +27,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSString * MPNotificationType NS_TYPED_EXTENSIBLE_ENUM;
+
 /*!
  A string constant "mini" that respresent Mini Notification
  */
-extern NSString *const MPNotificationTypeMini;
+extern MPNotificationType const MPNotificationTypeMini;
 /*!
  A string constant "takeover" that respresent Takeover Notification
  */
-extern NSString *const MPNotificationTypeTakeover;
+extern MPNotificationType const MPNotificationTypeTakeover;
 
 /*!
  Mixpanel API.
@@ -720,9 +722,9 @@ extern NSString *const MPNotificationTypeTakeover;
 
  You do not need to call this method on the main thread.
 
- @param type The type of notification to show, either @"mini", or @"takeover"
+ @param type The type of notification to show
  */
-- (void)showNotificationWithType:(NSString *)type;
+- (void)showNotificationWithType:(MPNotificationType)type;
 
 /*!
  Shows a notification if one is available.

@@ -30,8 +30,8 @@
 
 #define VERSION @"3.3.0"
 
-NSString *const MPNotificationTypeMini = @"mini";
-NSString *const MPNotificationTypeTakeover = @"takeover";
+MPNotificationType const MPNotificationTypeMini = @"mini";
+MPNotificationType const MPNotificationTypeTakeover = @"takeover";
 
 @implementation Mixpanel
 
@@ -1902,7 +1902,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }];
 }
 
-- (void)showNotificationWithType:(NSString *)type
+- (void)showNotificationWithType:(MPNotificationType)type
 {
     [self checkForNotificationsWithCompletion:^(NSArray *notifications) {
         if (type != nil) {
